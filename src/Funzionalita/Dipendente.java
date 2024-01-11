@@ -70,18 +70,21 @@ final String  Operaio = "OPERAIO";
 switch( livello){
     case Operaio:
        this.Livello = Impiegato;
-       this.stipendioBase += 200;
+
+       this.stipendioBase = Stipendi.IMPIEGATO.getStipendio();
         break;
     case Impiegato:
         this.Livello = Quadro;
-        this.stipendioBase += 500;
+        this.stipendioBase = Stipendi.QUADRO.getStipendio();
         break;
     case Quadro:
         this.Livello = Dirigente;
-        this.stipendioBase += 1000;
+        this.stipendioBase = Stipendi.DIRIGENTE.getStipendio();
         break;
     case Dirigente:
         this.Livello = livelloMassimo;
+        this.stipendioBase = Stipendi.DIRIGENTE.getStipendio();
+
         break;
     default:
         this.Livello = noImpiego;
